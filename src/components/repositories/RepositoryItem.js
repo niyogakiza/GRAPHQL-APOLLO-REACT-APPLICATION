@@ -104,6 +104,7 @@ const RepositoryItem = ({
                 <Link href={url}>{name}</Link>
             </h2>
             <div>
+                {/*<Mutation onError={} optimisticResponse={} update={} mutation={} refetchQueries={} onCompleted={} variables={} awaitRefetchQueries={}/>*/}
                 <Mutation
                     mutation={WATCH_REPOSITORY}
                     variables={{
@@ -120,7 +121,7 @@ const RepositoryItem = ({
                     }}
                     }}
                     update={updateWatch}
-                >
+                 >
                     {(updateSubscription, {data, loading, error}) => (
                         <Button
                             className='RepositoryItem-title-action'

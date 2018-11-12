@@ -2,6 +2,7 @@ import React, { Fragment } from 'react'
 import RepositoryItem from './RepositoryItem'
 import { Loading } from "../Loading"
 import {FetchMore} from '../FetchMore'
+import Issues from '../../components/Issues/Index'
 
 const getUpdateQuery = entry => (previousResult, {fetchMoreResult}) => {
     if (!fetchMoreResult) {
@@ -29,6 +30,10 @@ const RepositoryList = ({ repositories, fetchMore, loading, entry }) => (
         {repositories.edges.map(({ node }) => (
             <div key={node.id} className='RepositoryItem'>
                 <RepositoryItem {...node}/>
+                <Issues
+                    repositoryName={node.name}
+                    repositoryOwner={node.owner.login}
+                />
             </div>
         ))}
         <FetchMore
