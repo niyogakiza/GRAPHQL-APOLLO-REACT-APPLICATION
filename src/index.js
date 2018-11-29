@@ -10,7 +10,7 @@ import { onError } from 'apollo-link-error'
 import { ApolloLink } from 'apollo-link'
 
 const GITHUB_BASE_URL = 'https://api.github.com/graphql'
-const GITHUB_PERSONAL_ACCESS_TOKEN = ''
+const GITHUB_PERSONAL_ACCESS_TOKEN = '47fe77aae63939031c10f748f8dee037f595b452'
 const httpLink = new HttpLink({
     uri: GITHUB_BASE_URL,
     headers: {
